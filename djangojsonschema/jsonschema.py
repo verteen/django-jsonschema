@@ -30,7 +30,7 @@ class DjangoFormToJSONSchema(object):
         #TODO detect bound field
         widget = field.widget
         target_def = {
-            'title': field.label or pretty_name(name),
+            'title': unicode(field.label or pretty_name(name)),
             'description': field.help_text,
         }
         if field.required:
